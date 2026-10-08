@@ -41,6 +41,18 @@ Cada paso tiene su tag (`git checkout paso-1`) y se puede ejecutar por separado.
 | Paso | Archivo | Qué hace |
 |---|---|---|
 | 1 | [`client.py`](src/decisions/client.py) | Las tres preguntas, la llamada y los proveedores. Casi todos usan el formato de Jev; OpenAI tiene el suyo y se traduce en el mismo archivo. Pruébalo con `uv run decide try -p all` |
+| 2 | [`triage.py`](src/decisions/triage.py) | Una bandeja de entrada con 80 avisos inventados (correos, eventos y tareas) y etiquetados a mano. Cada aviso recibe cuatro preguntas en una sola llamada; las reglas y los umbrales están en el código. Compara la pregunta ingenua (`uv run decide triage -q v1`) con la buena (`uv run decide triage`) |
+
+### Probar otros umbrales gratis
+
+Cada pasada guarda las respuestas en `runs/`. Con `--replay` se vuelven a aplicar las reglas sobre ellas, sin llamar al modelo:
+
+```bash
+uv run decide triage                       # llama al modelo y guarda las respuestas
+uv run decide triage --replay -t 0.35      # otro umbral, 0 llamadas
+```
+
+El umbral depende del modelo: si cambias de proveedor, vuelve a buscarlo.
 
 ## Proveedores
 
