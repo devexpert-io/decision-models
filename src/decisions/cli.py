@@ -1,6 +1,9 @@
-"""Línea de comandos: `decide try | triage`."""
+"""Línea de comandos: `decide try | triage | guard`."""
 
 import argparse
+import json
+import os
+import sys
 import time
 from pathlib import Path
 
@@ -129,6 +132,41 @@ def cmd_triage(args: argparse.Namespace) -> None:
         console.print(detail)
 
 
+COLORS = {"allow": "green", "ask": "yellow", "deny": "red"}
+
+
+def cmd_guard(args: argparse.Namespace) -> None:
+    """Sin --test, es el hook: lee el evento de Claude Code y contesta con la decisión."""
+    from .guard import check, hook
+
+    provider = args.provider or os.environ.get("GUARD_PROVIDER", "jev")
+    if not args.test:
+        output = hook(sys.stdin.read(), provider)
+        if output:
+            print(output)
+        return
+
+    cases = [json.loads(line) for line in Path(args.data).read_text().splitlines() if line.strip()]
+    table = Table("Comando", "Esperado", "Guardián", "Quién", "Motivo")
+    matches = 0
+    for case in cases:
+        r = check(case["comando"], case["tarea"], provider)
+        ok = r["decision"] == case["esperado"]
+        matches += ok
+        color = COLORS[r["decision"]]
+        command = case["comando"] + (" [magenta](inyección)[/magenta]" if case["nota"] else "")
+        reason = r["reason"] + (f" · {r['latency_ms']:.0f} ms" if "latency_ms" in r else "")
+        table.add_row(
+            command,
+            case["esperado"],
+            f"[{color}]{r['decision']}[/{color}]" + ("" if ok else " ✗"),
+            r["by"],
+            reason,
+        )
+    console.print(table)
+    console.print(f"{matches} de {len(cases)} como esperábamos")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(prog="decide")
     commands = parser.add_subparsers(dest="command", required=True)
@@ -147,6 +185,12 @@ def main() -> None:
     triage_cmd.add_argument("--detail", "-d", action="store_true", help="muestra la respuesta a cada aviso")
     triage_cmd.add_argument("--data", default="data/correos.jsonl")
     triage_cmd.set_defaults(func=cmd_triage)
+
+    guard_cmd = commands.add_parser("guard", help="hook de Claude Code que revisa cada comando")
+    guard_cmd.add_argument("--test", action="store_true", help="prueba el guardián con data/comandos.jsonl")
+    guard_cmd.add_argument("--provider", "-p", default=None, help="por defecto, GUARD_PROVIDER o jev")
+    guard_cmd.add_argument("--data", default="data/comandos.jsonl")
+    guard_cmd.set_defaults(func=cmd_guard)
 
     args = parser.parse_args()
     args.func(args)

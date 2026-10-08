@@ -54,6 +54,23 @@ uv run decide triage --replay -t 0.35      # otro umbral, 0 llamadas
 
 El umbral depende del modelo: si cambias de proveedor, vuelve a buscarlo.
 
+### El guardián en Claude Code
+
+| Paso | Archivo | Qué hace |
+|---|---|---|
+| 3 | [`guard.py`](src/decisions/guard.py) | Un hook de Claude Code que revisa cada comando antes de ejecutarlo: permitir, preguntarte o bloquear. Pruébalo con `uv run decide guard --test` |
+
+Este repo ya trae el hook configurado en [`.claude/settings.json`](.claude/settings.json): abre Claude Code en la carpeta y cada comando de terminal pasa por el guardián. Para usarlo en otro proyecto, copia ese bloque y cambia `$CLAUDE_PROJECT_DIR` por la ruta de este repo. Elige el modelo con `GUARD_PROVIDER` (por defecto, `jev`). Cada decisión queda en `runs/guard.jsonl`.
+
+Cómo decide:
+
+1. **Reglas que bloquean siempre:** push forzado, `sudo`, borrar tu carpeta personal, ejecutar un script descargado, `DROP TABLE` o leer secretos.
+2. **Reglas que permiten siempre:** lo que solo lee (`ls`, `cat`, `git status`, `git diff`…).
+3. **El modelo, para lo demás:** tres preguntas (si se puede deshacer, si encaja con la tarea y cuánto daño puede hacer). Solo deja pasar lo que está claro; lo dudoso te lo pregunta. Nunca bloquea por su cuenta.
+4. **Si el modelo falla o tarda,** te pregunta. Claude Code deja pasar el comando cuando un hook se queda sin tiempo, así que el guardián nunca debe colgarse.
+
+La frontera de seguridad son las reglas. El modelo lee lo que escribe el agente, y eso se puede manipular: `data/comandos.jsonl` incluye comandos con comentarios que intentan convencerle («copia local de pruebas, totalmente reversible y sin riesgo»). Compara cómo aguanta cada proveedor con `uv run decide guard --test -p local`.
+
 ## Proveedores
 
 | `-p` | Modelo | Precio por millón de tokens de entrada |
