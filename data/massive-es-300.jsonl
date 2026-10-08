@@ -1,0 +1,300 @@
+{"id": "9364", "texto": "pongamos éxitos musicales", "intencion": "play_radio"}
+{"id": "4217", "texto": "me gustaría escuchar algunos buenos chistes divertidos", "intencion": "general_joke"}
+{"id": "12306", "texto": "resérvame un billete de primera clase para el siguiente tren a miami", "intencion": "transport_ticket"}
+{"id": "4084", "texto": "haz cafe", "intencion": "iot_coffee"}
+{"id": "5468", "texto": "tengo que llevarme gafas de sol", "intencion": "weather_query"}
+{"id": "1710", "texto": "cambiar el modo de música a rock", "intencion": "music_settings"}
+{"id": "1831", "texto": "pide una pizza del pizza hut", "intencion": "takeaway_order"}
+{"id": "10288", "texto": "pon un juego de tres en raya", "intencion": "play_game"}
+{"id": "13043", "texto": "quiero pastel de camote de una panadería local", "intencion": "lists_createoradd"}
+{"id": "12182", "texto": "cómo está el tráfico en la ciento uno", "intencion": "transport_traffic"}
+{"id": "796", "texto": "confirmar ajustes de mi alarma", "intencion": "alarm_query"}
+{"id": "8765", "texto": "poner mi cena en langosta roja en el calendario de hoy a las nueve", "intencion": "calendar_set"}
+{"id": "9629", "texto": "por favor puedesayudarme aescuchar la radio", "intencion": "play_radio"}
+{"id": "10177", "texto": "cómo cocinar espaguetis de calabaza", "intencion": "cooking_recipe"}
+{"id": "936", "texto": "abre y pon música de mi playlist de correr", "intencion": "play_music"}
+{"id": "8140", "texto": "establezca un recordatorio para el trece que yo tengo un almuerzo con dale", "intencion": "calendar_set"}
+{"id": "16613", "texto": "envía un correo al jefe diciendo que llegare tarde", "intencion": "email_sendemail"}
+{"id": "939", "texto": "poner mi alarma a las siete de la mañana", "intencion": "alarm_set"}
+{"id": "5911", "texto": "reproducir la música", "intencion": "music_settings"}
+{"id": "14928", "texto": "dime cual es la tasa de cambio de rupia a dírham", "intencion": "qa_currency"}
+{"id": "12070", "texto": "cuando abre el centro comercial ciudad de panamá", "intencion": "recommendation_events"}
+{"id": "286", "texto": "enciende las luces de la cocina", "intencion": "iot_hue_lighton"}
+{"id": "3101", "texto": "olly enciende las noticias", "intencion": "news_query"}
+{"id": "15815", "texto": "que es un numero de telefono del trabajo de emilia", "intencion": "email_querycontact"}
+{"id": "1061", "texto": "dame noticias deportivas actualizadas", "intencion": "news_query"}
+{"id": "10757", "texto": "qué artículos hay en mi lista de compras", "intencion": "lists_query"}
+{"id": "7870", "texto": "borrar evento del calendario", "intencion": "calendar_remove"}
+{"id": "14994", "texto": "cuál es la próxima película de denzel washington's", "intencion": "qa_factoid"}
+{"id": "201", "texto": "borra la alarma que acabo de poner", "intencion": "alarm_remove"}
+{"id": "10868", "texto": "olly algo que quede de la lista", "intencion": "lists_query"}
+{"id": "5497", "texto": "cuál es la diferencia horaria entre california y nueva york", "intencion": "datetime_convert"}
+{"id": "11942", "texto": "puedes buscar una tienda de muebles cerca de mí", "intencion": "recommendation_locations"}
+{"id": "12548", "texto": "necesito un taxi para volver a casa", "intencion": "transport_taxi"}
+{"id": "8535", "texto": "recuerda me la cita con el dentista que tengo yo en dos horas", "intencion": "calendar_set"}
+{"id": "8280", "texto": "necesito establecer un recordatorio el quince de marzo", "intencion": "calendar_set"}
+{"id": "10718", "texto": "puedes eliminar este artículo de la lista", "intencion": "lists_remove"}
+{"id": "3330", "texto": "quiero escuchar un chiste", "intencion": "general_joke"}
+{"id": "1048", "texto": "baje el volumen del altavoz", "intencion": "audio_volume_down"}
+{"id": "16987", "texto": "algún correo electrónico nuevo de juan", "intencion": "email_query"}
+{"id": "14170", "texto": "usa kim kardashian converse", "intencion": "qa_factoid"}
+{"id": "9732", "texto": "abre el audiolibro de patria", "intencion": "play_audiobook"}
+{"id": "12961", "texto": "por favor defina forense", "intencion": "qa_definition"}
+{"id": "11861", "texto": "cual es la mejor pelicula ahora en el cine", "intencion": "recommendation_movies"}
+{"id": "11990", "texto": "qué es una película en los cines que no apesta", "intencion": "recommendation_movies"}
+{"id": "6241", "texto": "ayude a una pobre necesitada hoy", "intencion": "general_quirky"}
+{"id": "3884", "texto": "enumera lista alarmas actual", "intencion": "alarm_query"}
+{"id": "2355", "texto": "en qué película sale la música cuál es el nombre de la música", "intencion": "music_query"}
+{"id": "16317", "texto": "he recibido nuevo s correos electrónicos de sara", "intencion": "email_query"}
+{"id": "46", "texto": "que pasa", "intencion": "general_greet"}
+{"id": "533", "texto": "poner una alarma a las nueve de la mañana", "intencion": "alarm_set"}
+{"id": "14761", "texto": "dame la definición de la palabra pontificado", "intencion": "qa_definition"}
+{"id": "5330", "texto": "enciende la aspiradora y ahora limpia el salón", "intencion": "iot_cleaning"}
+{"id": "426", "texto": "enciende el enchufe uno", "intencion": "iot_wemo_on"}
+{"id": "12213", "texto": "coger taxi de aquí al aeropuerto", "intencion": "transport_taxi"}
+{"id": "1352", "texto": "por favor baja el volumen del altavoz", "intencion": "audio_volume_down"}
+{"id": "10887", "texto": "borra mi lista", "intencion": "lists_remove"}
+{"id": "680", "texto": "mantenme informado sobre el precio del bitcoin por favor", "intencion": "news_query"}
+{"id": "3118", "texto": "cuál es la hora estándar oriental ahora mismo", "intencion": "datetime_query"}
+{"id": "4152", "texto": "por favor por la cancion quiereme", "intencion": "play_music"}
+{"id": "10960", "texto": "tacha ese de la lista", "intencion": "lists_remove"}
+{"id": "6550", "texto": "me ascendieron hoy se siente tan bien", "intencion": "general_quirky"}
+{"id": "10171", "texto": "cuál es la receta de la tortilla de patatas", "intencion": "cooking_recipe"}
+{"id": "7087", "texto": "cancelar la reunión de mañana en mi calendario", "intencion": "calendar_remove"}
+{"id": "13982", "texto": "tasa del dólar hoy", "intencion": "qa_currency"}
+{"id": "2983", "texto": "quitar alarma ajustada", "intencion": "alarm_remove"}
+{"id": "730", "texto": "apaga las luces", "intencion": "iot_hue_lightoff"}
+{"id": "4442", "texto": "hacer café a las tres", "intencion": "iot_coffee"}
+{"id": "4043", "texto": "inicia la aspiradora", "intencion": "iot_cleaning"}
+{"id": "12814", "texto": "por favor coge un billete de málaga a córdoba el martes", "intencion": "transport_ticket"}
+{"id": "14190", "texto": "a cuánto ascienden las existencias de starbuck en estos días", "intencion": "qa_stock"}
+{"id": "2403", "texto": "dame más luz", "intencion": "iot_hue_lightup"}
+{"id": "10756", "texto": "borra la lista de la compra", "intencion": "lists_remove"}
+{"id": "11266", "texto": "reproducir un podcast de mi biblioteca", "intencion": "play_podcasts"}
+{"id": "14874", "texto": "verifica el precio de las acciones para los donuts pequeños", "intencion": "qa_stock"}
+{"id": "389", "texto": "enciende el enchufe inteligente", "intencion": "iot_wemo_on"}
+{"id": "12723", "texto": "cómprame un boleto a boston", "intencion": "transport_ticket"}
+{"id": "6958", "texto": "asegúrate de que no haya eventos en mi calendario", "intencion": "calendar_remove"}
+{"id": "967", "texto": "puedo hacer un pedido para llevar del rosario's", "intencion": "takeaway_query"}
+{"id": "4166", "texto": "cambia el nivel del volumen al maximo", "intencion": "audio_volume_other"}
+{"id": "468", "texto": "cambia las luces a tenue", "intencion": "iot_hue_lightdim"}
+{"id": "6243", "texto": "estoy tan feliz hoy tengo entradas para el concierto", "intencion": "general_quirky"}
+{"id": "11932", "texto": "qué debería ver hoy", "intencion": "recommendation_movies"}
+{"id": "3103", "texto": "no pongas esta canción de nuevo", "intencion": "music_dislikeness"}
+{"id": "11700", "texto": "muéstrame reseñas del patio de comidas de mi ubicación más cercana", "intencion": "recommendation_locations"}
+{"id": "2309", "texto": "son las siete a. m. en hora pacifico", "intencion": "datetime_convert"}
+{"id": "10571", "texto": "android", "intencion": "lists_query"}
+{"id": "14147", "texto": "definir manta", "intencion": "qa_definition"}
+{"id": "5043", "texto": "poner mi alarma a las doce del mediodía", "intencion": "alarm_set"}
+{"id": "3784", "texto": "dime el pronóstico del tiempo para alicante", "intencion": "weather_query"}
+{"id": "4116", "texto": "pon mi playlist en modo aleatorio por favor", "intencion": "play_music"}
+{"id": "686", "texto": "qué hora es en madrid ahora", "intencion": "datetime_query"}
+{"id": "16470", "texto": "por favor añade este correo a mis contactos", "intencion": "email_addcontact"}
+{"id": "11279", "texto": "ve a podcast y reprpduce el siguiente episodio de friends", "intencion": "play_podcasts"}
+{"id": "12558", "texto": "por favor pídeme un uber", "intencion": "transport_taxi"}
+{"id": "1276", "texto": "quiero un café", "intencion": "iot_coffee"}
+{"id": "9909", "texto": "sigue reproduciendo guerra y paz", "intencion": "play_audiobook"}
+{"id": "13199", "texto": "sabes matemáticas", "intencion": "qa_maths"}
+{"id": "1646", "texto": "hay alguna alarma programada para hoy", "intencion": "alarm_query"}
+{"id": "10712", "texto": "crear una nueva lista", "intencion": "lists_createoradd"}
+{"id": "3590", "texto": "hablar en voz alta", "intencion": "audio_volume_up"}
+{"id": "6376", "texto": "qué es una buena película iraní de dos mil dieciséis", "intencion": "recommendation_movies"}
+{"id": "6928", "texto": "elimina todos los eventos", "intencion": "calendar_remove"}
+{"id": "4831", "texto": "aumenta el volumen del altavoz", "intencion": "audio_volume_up"}
+{"id": "4201", "texto": "enciende wemo", "intencion": "iot_wemo_on"}
+{"id": "11678", "texto": "me gustaría saber cuáles son los pubs mejor valorados de la zona", "intencion": "recommendation_locations"}
+{"id": "9317", "texto": "enciende la radio ahora", "intencion": "play_radio"}
+{"id": "11267", "texto": "encuentra un podcast interesante sobre la última charla de ted en español", "intencion": "play_podcasts"}
+{"id": "7185", "texto": "cuándo es mi próxima cita con el doctor janeiro", "intencion": "calendar_query"}
+{"id": "2354", "texto": "que tipo de música es", "intencion": "music_query"}
+{"id": "168", "texto": "pueden mandar comida a domicilio", "intencion": "takeaway_query"}
+{"id": "348", "texto": "va a llover mañana", "intencion": "weather_query"}
+{"id": "14757", "texto": "divide setenta y seis en dos partes", "intencion": "qa_maths"}
+{"id": "13370", "texto": "cuál es la suma de los dos números cuatro y seis", "intencion": "qa_maths"}
+{"id": "13796", "texto": "cuál es el tipo de cambio entre estados unidos y méxico", "intencion": "qa_currency"}
+{"id": "5579", "texto": "puedes cambiar el volumen a", "intencion": "audio_volume_other"}
+{"id": "1047", "texto": "necesito un buen llanto puedes tocarme canciones de rock tristes", "intencion": "play_music"}
+{"id": "560", "texto": "apaga la alarma a las ocho de la mañana", "intencion": "alarm_remove"}
+{"id": "15298", "texto": "olly que temas son de actualidad en las redes sociales", "intencion": "social_query"}
+{"id": "1510", "texto": "apaga el modo silencioso hasta que llegue a casa del trabajo", "intencion": "audio_volume_mute"}
+{"id": "10731", "texto": "lee lo que hay en mi lista", "intencion": "lists_query"}
+{"id": "3785", "texto": "apaga la luz del baño por favor", "intencion": "iot_hue_lightoff"}
+{"id": "3349", "texto": "dónde está el coche", "intencion": "audio_volume_up"}
+{"id": "124", "texto": "cuentame un chiste", "intencion": "general_joke"}
+{"id": "15205", "texto": "dame una actualización de mi facebook cada tres horas", "intencion": "social_query"}
+{"id": "4921", "texto": "apaga mi primera alarma", "intencion": "alarm_remove"}
+{"id": "14465", "texto": "direcciones a disneyland", "intencion": "transport_query"}
+{"id": "16975", "texto": "por favor encuentra un número de contacto para juan y dímelo", "intencion": "email_querycontact"}
+{"id": "10471", "texto": "necesito crear una nueva lista de tarea pendientes", "intencion": "lists_createoradd"}
+{"id": "14555", "texto": "avísame si suben o bajan el precio de las acciones de esta empresa", "intencion": "qa_stock"}
+{"id": "15647", "texto": "tuitear queja a", "intencion": "social_post"}
+{"id": "12606", "texto": "necesito conseguir un billete de tren a barcelona desde paris", "intencion": "transport_ticket"}
+{"id": "3378", "texto": "no hay luces en la cocina", "intencion": "iot_hue_lightoff"}
+{"id": "14150", "texto": "cuales son las zapatillas converse", "intencion": "qa_definition"}
+{"id": "5199", "texto": "añade mi opinión a esta canción genial", "intencion": "music_likeness"}
+{"id": "5823", "texto": "baja un veinte por ciento", "intencion": "audio_volume_down"}
+{"id": "14668", "texto": "describir el artículo xy", "intencion": "qa_definition"}
+{"id": "870", "texto": "guardar opinión", "intencion": "music_likeness"}
+{"id": "2056", "texto": "no quiero volver a escuchar esa canción nunca más", "intencion": "music_dislikeness"}
+{"id": "2890", "texto": "tiempo actual", "intencion": "weather_query"}
+{"id": "3603", "texto": "cuáles son las últimas noticias de rtve", "intencion": "news_query"}
+{"id": "15987", "texto": "añadir este nuevo correo electrónico con contacto", "intencion": "email_addcontact"}
+{"id": "14481", "texto": "podemos ir al sol", "intencion": "general_quirky"}
+{"id": "15723", "texto": "poner estado sintiéndome feliz en facebook", "intencion": "social_post"}
+{"id": "6109", "texto": "almacenar opinión sobre la canción", "intencion": "music_likeness"}
+{"id": "3835", "texto": "quiero pedir comida china para llevar", "intencion": "takeaway_order"}
+{"id": "16413", "texto": "muestrar todos los correos electrónicos que me envió mi jefe", "intencion": "email_query"}
+{"id": "317", "texto": "no hablar hoy", "intencion": "audio_volume_mute"}
+{"id": "15511", "texto": "enséñame mi actividad más reciente en redes sociales", "intencion": "social_query"}
+{"id": "3595", "texto": "más brillante", "intencion": "iot_hue_lightup"}
+{"id": "10426", "texto": "qué más falta en la agenda", "intencion": "lists_query"}
+{"id": "2094", "texto": "qué música está sonando en este momento", "intencion": "music_query"}
+{"id": "13548", "texto": "me gustaría que encendieras la tele", "intencion": "iot_wemo_on"}
+{"id": "6967", "texto": "puedes verificar los hechos sobre este tema", "intencion": "calendar_query"}
+{"id": "10346", "texto": "comienza un juego y juega conmigo", "intencion": "play_game"}
+{"id": "11643", "texto": "que eventos van a suceder en poco tiempo", "intencion": "recommendation_events"}
+{"id": "13926", "texto": "cual es el cumpleaños de hemingway", "intencion": "qa_factoid"}
+{"id": "1300", "texto": "rápido", "intencion": "audio_volume_up"}
+{"id": "1527", "texto": "recuérdame que me gusta esa canción", "intencion": "music_likeness"}
+{"id": "7257", "texto": "por favor recuérdame llamar a mamá en media hora", "intencion": "calendar_set"}
+{"id": "2334", "texto": "añadir alarma para mañana por la mañana a las seis de la mañana", "intencion": "alarm_set"}
+{"id": "16781", "texto": "añade esta dirección de correo a mis contactos y envía un correo", "intencion": "email_addcontact"}
+{"id": "4232", "texto": "pon asereje de las ketchup", "intencion": "play_music"}
+{"id": "2610", "texto": "he cancelado el pedido realizado en burger king se realizó", "intencion": "takeaway_query"}
+{"id": "4155", "texto": "cambia el volumen a treinta y cinco por ciento", "intencion": "audio_volume_other"}
+{"id": "1191", "texto": "si es el amanecer en estocolmo que hora es en okinawa", "intencion": "datetime_convert"}
+{"id": "5812", "texto": "establecer los ajustes de audio por defecto", "intencion": "audio_volume_other"}
+{"id": "15138", "texto": "chequea mis redes sociales", "intencion": "social_query"}
+{"id": "10349", "texto": "pon mi gran noche qué pasará qué misterio habrá", "intencion": "play_game"}
+{"id": "15982", "texto": "dame el numero de teléfono de alejandro", "intencion": "email_querycontact"}
+{"id": "4809", "texto": "recuerda cómo me enamoré de esta canción", "intencion": "music_likeness"}
+{"id": "3598", "texto": "y tú", "intencion": "general_quirky"}
+{"id": "17015", "texto": "empezar a responder", "intencion": "email_sendemail"}
+{"id": "1575", "texto": "enciende la aspiradora", "intencion": "iot_cleaning"}
+{"id": "6178", "texto": "debería ponerme una chaqueta", "intencion": "weather_query"}
+{"id": "1778", "texto": "por favor baja las luces", "intencion": "iot_hue_lightdim"}
+{"id": "4088", "texto": "apaga la luz del techo", "intencion": "iot_hue_lightoff"}
+{"id": "5324", "texto": "hola tenéis entrega a domicilio", "intencion": "takeaway_query"}
+{"id": "10321", "texto": "quiero jugar al fifa diecisiete", "intencion": "play_game"}
+{"id": "861", "texto": "mis alarmas programadas", "intencion": "alarm_query"}
+{"id": "13666", "texto": "cuanto valen las libras ahora", "intencion": "qa_currency"}
+{"id": "4994", "texto": "por favor silencia mi altavoz", "intencion": "audio_volume_mute"}
+{"id": "16961", "texto": "responder con", "intencion": "email_sendemail"}
+{"id": "6293", "texto": "oye conocí a una de mis antiguas compañeras hoy", "intencion": "general_quirky"}
+{"id": "2338", "texto": "hacer un pedido de fideos un paquete hacerlo como pedido para llevar", "intencion": "takeaway_order"}
+{"id": "3543", "texto": "quiero que la luz sea un poco más roja", "intencion": "iot_hue_lightchange"}
+{"id": "2721", "texto": "tienes una broma graciosa para mi", "intencion": "general_joke"}
+{"id": "4554", "texto": "puedes hacer algo de cafe", "intencion": "iot_coffee"}
+{"id": "15401", "texto": "abre twitter envía mensaje", "intencion": "social_post"}
+{"id": "4516", "texto": "olly cambia el color de las luces", "intencion": "iot_hue_lightchange"}
+{"id": "9669", "texto": "quiero escuchar ateo de c tangana", "intencion": "play_audiobook"}
+{"id": "11384", "texto": "puedes bajar de mi podcast el fichero disponible en internet y tocarlo una vez", "intencion": "play_podcasts"}
+{"id": "5333", "texto": "diferencia horaria entre españa y estados unidos", "intencion": "datetime_convert"}
+{"id": "5912", "texto": "corta las canciones en esta música", "intencion": "music_settings"}
+{"id": "8666", "texto": "elimina todos los eventos de mi calendario", "intencion": "calendar_remove"}
+{"id": "6174", "texto": "haz lo más brillante aquí", "intencion": "iot_hue_lightup"}
+{"id": "5017", "texto": "puedes por favor hacer un cafe", "intencion": "iot_coffee"}
+{"id": "315", "texto": "por favor cállate por otra hora", "intencion": "audio_volume_mute"}
+{"id": "4273", "texto": "reproducir la canción aces high", "intencion": "play_music"}
+{"id": "1266", "texto": "si son las cinco de la mañana en berlin que hora es aquí", "intencion": "datetime_convert"}
+{"id": "1554", "texto": "apaga las lamparas", "intencion": "iot_hue_lightoff"}
+{"id": "12693", "texto": "cómo está el tráfico en mi ruta habitual para ir al trabajo", "intencion": "transport_traffic"}
+{"id": "4772", "texto": "dime la hora en esta zona horaria", "intencion": "datetime_query"}
+{"id": "8667", "texto": "en los últimos tres meses cuántas reuniones he tenido con el señor lópez", "intencion": "calendar_query"}
+{"id": "12233", "texto": "busca en google billetes de tren a madrid", "intencion": "transport_ticket"}
+{"id": "4268", "texto": "cambia a la siguiente canción de la lista", "intencion": "music_settings"}
+{"id": "1677", "texto": "qué música se está reproduciendo actualmente", "intencion": "music_query"}
+{"id": "10350", "texto": "jugar mario kart", "intencion": "play_game"}
+{"id": "8336", "texto": "cuándo es mi brunch con jennifer", "intencion": "calendar_query"}
+{"id": "9494", "texto": "podrías por favor poner la emisora f. m. que reproduce canciones pop", "intencion": "play_radio"}
+{"id": "13552", "texto": "cuanto es seis dividido por dos", "intencion": "qa_maths"}
+{"id": "9594", "texto": "fm noventa y tres coma cinco canciones de radio", "intencion": "play_radio"}
+{"id": "12869", "texto": "informe de trafico", "intencion": "transport_traffic"}
+{"id": "14419", "texto": "antonio banderas tiene una nueva película este año", "intencion": "qa_factoid"}
+{"id": "12851", "texto": "muéstrame la dirección a mi casa", "intencion": "transport_query"}
+{"id": "13172", "texto": "calcular dos multiplicado por dos", "intencion": "qa_maths"}
+{"id": "1428", "texto": "quisiera algunas luces rojas", "intencion": "iot_hue_lightchange"}
+{"id": "14473", "texto": "abrir precio del stock por su nombre", "intencion": "qa_stock"}
+{"id": "5152", "texto": "por favor salta dos canciones", "intencion": "music_settings"}
+{"id": "3809", "texto": "baja el volumen del altavoz", "intencion": "audio_volume_down"}
+{"id": "15845", "texto": "cómo ha llegado a nosotros", "intencion": "email_sendemail"}
+{"id": "15274", "texto": "por favor escanea mis redes sociales y dime que está pasando", "intencion": "social_query"}
+{"id": "3841", "texto": "activa la roomba", "intencion": "iot_cleaning"}
+{"id": "12908", "texto": "a qué hora llega el tren a barcelona", "intencion": "transport_query"}
+{"id": "4249", "texto": "casa puedes hacer todas las luces de casa azúl", "intencion": "iot_hue_lightchange"}
+{"id": "8912", "texto": "dame los eventos del calendario de hoy después de las seis de la tarde", "intencion": "calendar_query"}
+{"id": "964", "texto": "quiero luces más bajas", "intencion": "iot_hue_lightdim"}
+{"id": "5439", "texto": "necesito un paraguas esta noche", "intencion": "weather_query"}
+{"id": "15459", "texto": "envía un queja por twitter", "intencion": "social_post"}
+{"id": "1042", "texto": "abre la carpeta de aplicaciones por favor", "intencion": "takeaway_order"}
+{"id": "10645", "texto": "añadir vino tinto a mi lista de la compra", "intencion": "lists_createoradd"}
+{"id": "12838", "texto": "cómo está el tráfico en este momento", "intencion": "transport_traffic"}
+{"id": "11841", "texto": "hay ferias de artesanía en esta zona", "intencion": "recommendation_events"}
+{"id": "14926", "texto": "cuánto costaría comprar acciones de gamesa", "intencion": "qa_stock"}
+{"id": "2690", "texto": "apaga el enchufe", "intencion": "iot_wemo_off"}
+{"id": "9827", "texto": "reanudar la canción del audiolibro de los beatles", "intencion": "play_audiobook"}
+{"id": "4882", "texto": "que hora es en gandia", "intencion": "datetime_query"}
+{"id": "1655", "texto": "va a nevar mañana al mediodía", "intencion": "weather_query"}
+{"id": "3522", "texto": "por favor enciende las luces de mi terraza", "intencion": "iot_hue_lighton"}
+{"id": "14453", "texto": "tipo de cambio del euro con el dólar", "intencion": "qa_currency"}
+{"id": "4799", "texto": "enciende el enchufe de wemo", "intencion": "iot_wemo_on"}
+{"id": "4966", "texto": "hola quiero apagar mi enchufe wemo", "intencion": "iot_wemo_off"}
+{"id": "2016", "texto": "baja la luces de la cocina", "intencion": "iot_hue_lightdim"}
+{"id": "16652", "texto": "el correo electrónico de guillermo tenia datos adjuntos", "intencion": "email_query"}
+{"id": "15213", "texto": "qué es tendencia ahora", "intencion": "news_query"}
+{"id": "10077", "texto": "buscar una receta para la cena de esta noche", "intencion": "cooking_recipe"}
+{"id": "4992", "texto": "apaga los enchufes", "intencion": "iot_wemo_off"}
+{"id": "3029", "texto": "odio esta canción", "intencion": "music_dislikeness"}
+{"id": "5050", "texto": "apaga todos los dispositivos activos", "intencion": "iot_wemo_off"}
+{"id": "1076", "texto": "no pongas rock metal", "intencion": "music_dislikeness"}
+{"id": "16624", "texto": "necesito que envíes un correo electronico a movistar sobre cuestiones de mi servicio", "intencion": "email_sendemail"}
+{"id": "2263", "texto": "enseñame un color suave", "intencion": "iot_hue_lightdim"}
+{"id": "1715", "texto": "baja el volumen al cincuenta por ciento", "intencion": "audio_volume_down"}
+{"id": "12020", "texto": "dime qué tiendas de ropa hay en un radio de cinco kilómetros de mi", "intencion": "recommendation_locations"}
+{"id": "11650", "texto": "tanto los jóvenes conductores como los conductores provisionales chocan más a menudo que otros conductores porque todavía no han tenido la amplia gama de experiencias que necesitan para conducir con seguridad por sí mismos la investigación ha demostrado que la experiencia al volante es un factor importante para reducir los accidentes de tráfico y que el momento más seguro para los jóvenes conductores es cuando conducen bajo supervisión mientras aprenden", "intencion": "recommendation_events"}
+{"id": "11339", "texto": "reproduce mi podcast más visto", "intencion": "play_podcasts"}
+{"id": "11272", "texto": "toca la siguiente", "intencion": "play_podcasts"}
+{"id": "11681", "texto": "por favor muéstra me maratón cerca de mí", "intencion": "recommendation_events"}
+{"id": "10150", "texto": "como hacer taco", "intencion": "cooking_recipe"}
+{"id": "3460", "texto": "tiempo de silencio", "intencion": "audio_volume_mute"}
+{"id": "11140", "texto": "lista de adjustes", "intencion": "lists_createoradd"}
+{"id": "4240", "texto": "enciende la roomba", "intencion": "iot_cleaning"}
+{"id": "1993", "texto": "puedes encender las luces", "intencion": "iot_hue_lightup"}
+{"id": "1065", "texto": "dónde está el ajuste de volumen", "intencion": "audio_volume_other"}
+{"id": "10097", "texto": "me gustaría una hamburguesa con queso", "intencion": "cooking_recipe"}
+{"id": "15548", "texto": "tuitea queja con el móvil a samsung", "intencion": "social_post"}
+{"id": "12526", "texto": "cuál es la forma más rápida de llegar a starbucks", "intencion": "transport_query"}
+{"id": "484", "texto": "quién es el cantante de esta cancion", "intencion": "music_query"}
+{"id": "4377", "texto": "qué tiempo hace ahora", "intencion": "weather_query"}
+{"id": "5307", "texto": "es el veinte de marzo hoy", "intencion": "datetime_query"}
+{"id": "11773", "texto": "encontrar una película nominada al oscar", "intencion": "recommendation_movies"}
+{"id": "16048", "texto": "muéstrame correos electrónicos recientes", "intencion": "email_query"}
+{"id": "4913", "texto": "estás al tanto de esta broma", "intencion": "general_joke"}
+{"id": "16710", "texto": "cuántos de mis contactos viven o trabajan en pamplona", "intencion": "email_querycontact"}
+{"id": "4375", "texto": "revisar todas las alarmas", "intencion": "alarm_query"}
+{"id": "13340", "texto": "me gustaria poder calcular la respuesta de los resultados de busqueda como lo hace wolfram alpha", "intencion": "general_quirky"}
+{"id": "14544", "texto": "averigüe el precio de las acciones de microsoft en nasdaq", "intencion": "qa_stock"}
+{"id": "4712", "texto": "no me despiertes mañana", "intencion": "alarm_remove"}
+{"id": "3413", "texto": "sabe la entrega estimada de mi pedido", "intencion": "takeaway_query"}
+{"id": "12244", "texto": "reservar un taxi para ir al cine a la una", "intencion": "transport_taxi"}
+{"id": "16583", "texto": "tiene mi compañero de trabajo un número de teléfono de casa", "intencion": "email_querycontact"}
+{"id": "12779", "texto": "pídeme el uber más cercano", "intencion": "transport_taxi"}
+{"id": "16694", "texto": "localizar el correo electrónico del consum y poner lo en mi lista de contacto", "intencion": "email_addcontact"}
+{"id": "17087", "texto": "revisa los nuevos correos recibidos de maría", "intencion": "email_query"}
+{"id": "14063", "texto": "cuál fue el cumpleaños de elvis presley", "intencion": "qa_factoid"}
+{"id": "12263", "texto": "california", "intencion": "transport_query"}
+{"id": "12066", "texto": "que tiendas hay cerca de mi", "intencion": "recommendation_locations"}
+{"id": "9678", "texto": "puedes poner alicia en el país de las maravillas", "intencion": "play_audiobook"}
+{"id": "261", "texto": "apenas puedo oírte", "intencion": "audio_volume_up"}
+{"id": "16455", "texto": "añadir nuevo correo electrónico a mis contactos juan arroba gmail punto com", "intencion": "email_addcontact"}
+{"id": "13487", "texto": "olly cuál es la capital de sevilla", "intencion": "qa_factoid"}
+{"id": "12256", "texto": "cómo está el tráfico actualmente cerca de central park road", "intencion": "transport_traffic"}
+{"id": "3077", "texto": "apaga enchufe", "intencion": "iot_wemo_off"}
+{"id": "5554", "texto": "esta canción es de ed sheeran", "intencion": "music_query"}
+{"id": "14", "texto": "y la oscuridad ha caído", "intencion": "iot_hue_lighton"}
+{"id": "1830", "texto": "quiero comer algo picante", "intencion": "takeaway_order"}
+{"id": "10848", "texto": "quita esta lista de las demas", "intencion": "lists_remove"}
+{"id": "5261", "texto": "es la canción de shakira", "intencion": "music_query"}
+{"id": "5501", "texto": "por favor enciende todas las luces", "intencion": "iot_hue_lightup"}
+{"id": "4930", "texto": "activa alarma a las tres y media de la tarde hoy", "intencion": "alarm_set"}
+{"id": "2283", "texto": "necesito cambiar el color de las luces de mi casa a azul", "intencion": "iot_hue_lightchange"}

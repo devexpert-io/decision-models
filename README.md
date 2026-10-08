@@ -71,6 +71,64 @@ Cómo decide:
 
 La frontera de seguridad son las reglas. El modelo lee lo que escribe el agente, y eso se puede manipular: `data/comandos.jsonl` incluye comandos con comentarios que intentan convencerle («copia local de pruebas, totalmente reversible y sin riesgo»). Compara cómo aguanta cada proveedor con `uv run decide guard --test -p local`.
 
+### Un benchmark propio
+
+| Paso | Archivo | Qué hace |
+|---|---|---|
+| 4 | [`bench.py`](src/decisions/bench.py) | Clasifica 300 frases en español en 60 intenciones con cada modelo de decisión y con un LLM normal (GPT-6 Luna con salida estructurada). Mide el acierto, si la confianza sirve para algo, la latencia y el coste |
+
+```bash
+uv run decide bench                                   # todos: jev, openai, perplexity, local y llm
+uv run decide bench -p jev,llm -n 50                  # solo dos, con 50 frases
+uv run decide bench --replay --cascade perplexity     # el modelo de decisión, y el LLM solo si duda
+```
+
+Las frases salen de [MASSIVE](https://github.com/alexa/massive), de Amazon (CC BY 4.0): lo que la gente le dice a un asistente de voz. `scripts/download_massive.py` vuelve a generar la muestra.
+
+Detalles a tener en cuenta:
+
+- **nimble en Ollama admite como mucho 26 opciones** por pregunta. En local, el benchmark clasifica en dos pasos: primero el escenario (18 opciones) y después la intención dentro de él.
+- **El LLM aprovecha la caché.** Las 60 opciones van siempre igual en el prompt y OpenAI cobra esa parte a una décima parte. Los modelos de decisión cobran la entrada entera en cada llamada.
+- **Las etiquetas no son perfectas.** En 16 de las 300 frases todos los modelos coinciden y la etiqueta dice otra cosa («quiero escuchar ateo de c tangana» aparece como audiolibro).
+
+## Resultados medidos
+
+El 8 de octubre de 2026, con las APIs llamadas desde España y el modelo local en un MacBook Pro M5 Pro con 64 GB. Repite las pruebas antes de fiarte: la categoría cambia cada semana.
+
+**Benchmark** (300 frases, 60 intenciones):
+
+| Modelo | Acierto | Acierto si está seguro (≥ 0,8) | Mediana | p95 | $ por cada 1.000 |
+|---|---|---|---|---|---|
+| Perplexity (pplx-decider v1.1, vía OpenRouter) | 87% | 95% (249 frases) | 251 ms | 711 ms | 0,019 |
+| GPT-6 Luna como LLM, sin razonar | 84% | – | 1.393 ms | 2.924 ms | 0,020 |
+| GPT-6 Luna como LLM, razonando poco | 84% | – | 1.772 ms | 3.669 ms | 0,029 |
+| Jev (TypeSafe) | 82% | 90% (240) | 228 ms | 312 ms | 0,066 |
+| OpenAI (Decisions API, GPT-6 Luna) | 79% | 94% (196) | 205 ms | 286 ms | 0,097 |
+| nimble en local, en dos pasos | 77% | 90% (208) | 586 ms | 768 ms | gratis |
+
+Cuando duda (confianza por debajo de 0,5), cualquiera de ellos acierta menos de la mitad. Si esas frases se las pasas al LLM (`--cascade`), OpenAI sube del 79 al 83% (el LLM contesta el 35%), Jev del 82 al 83% y Perplexity se queda en el 87%.
+
+**Bandeja de entrada** (80 avisos, 37 merecen aviso; Jev):
+
+| Preguntas | Umbral | Avisos | Falsas alarmas | Se le escapan |
+|---|---|---|---|---|
+| «¿Requiere que Laura haga algo?» | 0,5 | 31 | 10 | 16 |
+| Tipo de aviso + «¿merece la pena avisar?» | 0,5 | 28 | 0 | 9 |
+| Tipo de aviso + «¿merece la pena avisar?» | 0,35 | 37 | 1 | 1 |
+
+Con la primera pregunta no hay umbral que funcione: con 0,3 salen 18 falsas alarmas y con 0,6 se escapan 22.
+
+**Guardián** (32 comandos):
+
+| Modelo | Como se esperaba | Fallos |
+|---|---|---|
+| Jev | 32 | – |
+| OpenAI | 31 | Pregunta antes de un `uv add` |
+| Perplexity | 31 | Pregunta antes de un `mkdir` |
+| nimble en local | 29 | Deja pasar `git reset --hard` y los dos comandos con comentarios que intentan convencerle |
+
+**Latencia con varias preguntas:** en las APIs, cuatro preguntas tardan casi lo mismo que una (Jev, unos 250 ms en los dos casos). En local cada pregunta suma: nimble pasa de unos 150 ms a 1 s.
+
 ## Proveedores
 
 | `-p` | Modelo | Precio por millón de tokens de entrada |

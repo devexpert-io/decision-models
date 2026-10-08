@@ -1,4 +1,4 @@
-"""Línea de comandos: `decide try | triage | guard`."""
+"""Línea de comandos: `decide try | triage | guard | bench`."""
 
 import argparse
 import json
@@ -167,6 +167,78 @@ def cmd_guard(args: argparse.Namespace) -> None:
     console.print(f"{matches} de {len(cases)} como esperábamos")
 
 
+LLM_LABELS = {"llm": "GPT-6 Luna como LLM, sin razonar", "llm:low": "GPT-6 Luna como LLM, razonando poco"}
+
+
+def cmd_bench(args: argparse.Namespace) -> None:
+    """La misma clasificación con varios modelos: acierto, confianza, latencia y coste."""
+    from .bench import cascade, run, summarize
+    from .client import get_provider
+
+    rows = [json.loads(line) for line in Path(args.data).read_text().splitlines() if line.strip()]
+    rows = rows[: args.limit]
+
+    def pct(x: float | None) -> str:
+        return "-" if x is None else f"{x:.0%}"
+
+    table = Table("Modelo", "Acierto", "Si está seguro", "Si duda", "Mediana", "p95", "$ por 1.000", "Total")
+    results = {}
+    for provider in args.providers.split(","):
+        local = provider == "local" or provider.startswith("ollama:")
+        two_steps = (args.two_steps or local) and not provider.startswith("llm")
+        slug = provider.replace(":", "_").replace("/", "_") + ("-2pasos" if two_steps else "")
+        # Una pasada parcial va a su propio archivo para no pisar la completa
+        log = Path("runs") / f"bench-{slug}{f'-n{args.limit}' if args.limit else ''}.jsonl"
+        if args.replay:
+            records = [json.loads(line) for line in log.read_text().splitlines()]
+            elapsed = None
+        else:
+            console.print(f"[dim]{provider}: {len(rows)} frases…[/dim]")
+            start = time.perf_counter()
+            records = run(rows, provider, log, two_steps)
+            elapsed = time.perf_counter() - start
+
+        s = summarize(records)
+        s["elapsed_s"] = elapsed
+        results[slug] = s
+        label = LLM_LABELS.get(provider) or get_provider(provider).label
+        if two_steps:
+            label += ", en dos pasos"
+        high, low = s.get("band_high"), s.get("band_low")
+        table.add_row(
+            label,
+            pct(s["accuracy"]),
+            f"{pct(high['accuracy'])} de {high['n']}" if high else "-",
+            f"{pct(low['accuracy'])} de {low['n']}" if low else "-",
+            f"{s['p50_ms']:.0f} ms",
+            f"{s['p95_ms']:.0f} ms",
+            f"{s['cost_per_1000']:.3f}",
+            "-" if elapsed is None else f"{elapsed:.0f} s",
+        )
+
+    # La cascada sale de las respuestas guardadas: el modelo de decisión, y el LLM solo si duda
+    for provider in filter(None, (args.cascade or "").split(",")):
+        first = [json.loads(line) for line in Path(f"runs/bench-{provider}.jsonl").read_text().splitlines()]
+        llm = [json.loads(line) for line in Path("runs/bench-llm.jsonl").read_text().splitlines()]
+        s = summarize(cascade(first, llm))
+        results[f"{provider}+llm"] = s
+        table.add_row(
+            f"{get_provider(provider).label} + LLM si duda",
+            pct(s["accuracy"]),
+            "-",
+            f"LLM en el {pct(s['escalated'])}",
+            f"{s['p50_ms']:.0f} ms",
+            f"{s['p95_ms']:.0f} ms",
+            f"{s['cost_per_1000']:.3f}",
+            "-",
+        )
+
+    console.print(table)
+    console.print("«Si está seguro»: confianza de 0,8 o más. «Si duda»: menos de 0,5.")
+    if not args.replay and not args.limit:
+        Path("runs/bench-summary.json").write_text(json.dumps(results, indent=2, ensure_ascii=False))
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(prog="decide")
     commands = parser.add_subparsers(dest="command", required=True)
@@ -191,6 +263,21 @@ def main() -> None:
     guard_cmd.add_argument("--provider", "-p", default=None, help="por defecto, GUARD_PROVIDER o jev")
     guard_cmd.add_argument("--data", default="data/comandos.jsonl")
     guard_cmd.set_defaults(func=cmd_guard)
+
+    bench_cmd = commands.add_parser("bench", help="compara modelos clasificando 300 frases en 60 intenciones")
+    bench_cmd.add_argument(
+        "--providers", "-p", default="jev,openai,perplexity,local,llm", help="separados por comas; llm es GPT-6 Luna"
+    )
+    bench_cmd.add_argument("--limit", "-n", type=int, default=None, help="usa solo las primeras N frases")
+    bench_cmd.add_argument(
+        "--two-steps", action="store_true", help="escenario y luego intención (en local, siempre: admite 26 opciones)"
+    )
+    bench_cmd.add_argument("--replay", action="store_true", help="resume las respuestas guardadas en runs/")
+    bench_cmd.add_argument(
+        "--cascade", help="modelos de decisión que pasan al LLM cuando dudan, separados por comas (necesita --replay)"
+    )
+    bench_cmd.add_argument("--data", default="data/massive-es-300.jsonl")
+    bench_cmd.set_defaults(func=cmd_bench)
 
     args = parser.parse_args()
     args.func(args)
