@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+.env
+
+# Registros de cada ejecución: se generan en local
+runs/
+data/raw/
